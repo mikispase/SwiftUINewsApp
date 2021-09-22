@@ -55,6 +55,7 @@ struct ArticleView: View {
         }
         .redacted(reason: isLoading ? .placeholder : [])
         .allowsHitTesting(!isLoading)
+   
         
 
     }

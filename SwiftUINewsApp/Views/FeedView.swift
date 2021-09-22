@@ -22,7 +22,13 @@ struct FeedView: View {
                               handler: viewModel.getArticles)
                 default:
                     List(viewModel.isLoading ? Article.dummyData : viewModel.articles) { item in
-                        ArticleView(isLoading: viewModel.isLoading, article: item)
+                      
+                      
+                        NavigationLink(destination: FeedDetails(article: item)) {
+                            ArticleView(isLoading: viewModel.isLoading, article: item)
+                                     }
+                        
+                        
                     }
                     .navigationTitle(Text("News"))
                 }
